@@ -1,6 +1,7 @@
 import "./adminAnnouncements.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import api from "../../services/api";
 
 export default function Announcements() {
 
@@ -10,7 +11,8 @@ export default function Announcements() {
   /* ---------------- Fetch All Announcements ---------------- */
 
   const fetchAnnouncements = () => {
-    axios.get("http://localhost:8080/api/admin/all-announcements", {
+    // api.get("http://localhost:8080/api/admin/all-announcements", {
+    api.get("/admin/all-announcements", {
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem("token")}`
       }
@@ -33,8 +35,10 @@ export default function Announcements() {
     }
 
     try {
-      await axios.post(
-        "http://localhost:8080/api/admin/announcements",
+      // await axios.post(
+      //   "http://localhost:8080/api/admin/announcements",
+       await api.post(
+        "/admin/announcements",
         announcement,
         {
           headers: {

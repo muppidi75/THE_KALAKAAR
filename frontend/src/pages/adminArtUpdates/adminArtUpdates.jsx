@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./adminArtUpdates.css";
-import axios from "../../services/api";
+import api from "../../services/api";
 
 export default function Artworks() {
 
@@ -22,7 +22,8 @@ export default function Artworks() {
     formData.append("description", description);
 
     try {
-      await axios.post("http://localhost:8080/api/admin/artworks/upload", formData, {
+      // await axios.post("http://localhost:8080/api/admin/artworks/upload", formData, {
+      await api.post("/admin/artworks/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

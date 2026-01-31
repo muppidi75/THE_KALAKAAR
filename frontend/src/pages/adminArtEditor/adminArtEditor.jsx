@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "../../services/api";
+import api from "../../services/api";
 import "./adminArtEditor.css";
 
 export default function ArtEditor(){
@@ -12,18 +12,21 @@ export default function ArtEditor(){
   },[]);
 
   const loadArtworks = async ()=>{
-    const res = await axios.get("http://localhost:8080/api/admin/artworks");
+    // const res = await axios.get("http://localhost:8080/api/admin/artworks");
+    const res = await api.get("/admin/artworks");
     setArtworks(res.data);
   };
 
   const deleteArt = async(id)=>{
     if(!window.confirm("Delete artwork?")) return;
-    await axios.delete(`http://localhost:8080/api/admin/artworks/${id}`);
+    // await axios.delete(`http://localhost:8080/api/admin/artworks/${id}`);
+    await api.delete(`/admin/artworks/${id}`);
     loadArtworks();
   };
 
   const saveEdit = async()=>{
-    await axios.put(`http://localhost:8080/api/admin/artworks/${editing.id}`, editing);
+    // await axios.put(`http://localhost:8080/api/admin/artworks/${editing.id}`, editing);
+    await api.put(`/admin/artworks/${editing.id}`, editing);
     setEditing(null);
     loadArtworks();
   };

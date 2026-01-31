@@ -1,13 +1,14 @@
 import "./adminFeedbackView.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import api from "../../services/api";
 
 export default function AdminFeedback() {
 
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/admin/feedback", {
+    api.get("http://localhost:8080/api/admin/feedback", {
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem("token")}`
       }

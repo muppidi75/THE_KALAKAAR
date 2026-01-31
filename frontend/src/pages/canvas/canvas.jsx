@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./canvas.css";
 import { useState, useEffect } from "react";
 import axios from "axios";   // ✅ ADD THIS
+import api from "../../services/api";
 
 export default function Canvas() {
   const navigate = useNavigate();
@@ -13,7 +14,8 @@ export default function Canvas() {
   const [recentFeedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/user/canvas/recentFeedback")
+    // fetch("http://localhost:8080/api/user/canvas/recentFeedback")
+    api.get("/user/canvas/recentFeedback")
       .then(res => res.json())
       .then(data => setFeedbacks(data))
       .catch(err => console.log(err));
@@ -24,7 +26,9 @@ export default function Canvas() {
   const [announcement, setAnnouncement] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/user/latest-announcement")
+    // axios.get("http://localhost:8080/api/user/latest-announcement")
+    api.get("/user/latest-announcement")
+
       .then(res => setAnnouncement(res.data))
       .catch(err => console.log(err));
   }, []);

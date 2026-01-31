@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "../../services/api";
+import api from "../../services/api";
 import "./collections.css";
+
 
 export default function Collections() {
   const [artworks, setArtworks] = useState([]);
@@ -12,7 +13,8 @@ export default function Collections() {
 
   const fetchArtworks = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/user/collections");
+      // const res = await axios.get("http://localhost:8080/api/user/collections");
+      const res = await api.get("/user/collections");
       setArtworks(res.data);
     } catch (error) {
       console.log("Error fetching artworks", error);

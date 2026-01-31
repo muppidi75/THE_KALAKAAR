@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from "react";
 import "./contact.css";
 import { name } from "../../../package.json";
+import api from "../../services/api";
 
 export default function ReachUs() {
 
@@ -22,7 +23,8 @@ export default function ReachUs() {
 
 const [feedbacks, setFeedbacks] = useState([]);
  useEffect(() => {
-  fetch("http://localhost:8080/api/user/canvas/feedback")
+  // fetch("http://localhost:8080/api/user/canvas/feedback")
+     api.get("/user/canvas/feedback")
     .then(res => res.json())
     .then(data => setFeedbacks(data))
     .catch(err => console.log(err));
@@ -33,18 +35,9 @@ const [feedbacks, setFeedbacks] = useState([]);
     console.log("Form Data:", formData);   // Later send to backend
     setSubmitted(true);
      try {
-      const response = await fetch(
-        "http://localhost:8080/api/user/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
-        }
-      );
+      const response = await api.post("/user/contact", formData);
 
-      if (response.ok) {
+      if (response.status === 200 || response.status === 201) {
         setSubmitted(true);
       } else {
         alert("Failed to send message");
@@ -52,8 +45,10 @@ const [feedbacks, setFeedbacks] = useState([]);
 
     } catch (err) {
       console.error(err);
+      alert("Network error");
     }
   };
+
 
   return (
     <div className="reach-container">
