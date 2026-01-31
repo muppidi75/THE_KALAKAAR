@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Canvas.css";
+import "./canvas.css";
 import { useState, useEffect } from "react";
 import axios from "axios";   // ✅ ADD THIS
 
