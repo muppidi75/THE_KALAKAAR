@@ -1,0 +1,118 @@
+.reach-container {
+  display: flex;
+  gap: 25px;
+  padding: 40px;
+  background: #1c2230;
+  min-height: 100vh;
+  color: white;
+}
+
+/* LEFT FORM */
+.reach-form-card {
+  flex: 2;
+  background: #2a3145;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.reach-form-card h2 {
+  color: #ffb347;
+  margin-bottom: 10px;
+}
+
+.reach-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reach-form-card input,
+.reach-form-card textarea {
+  background: #1c2230;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+}
+
+.reach-form-card input:focus,
+.reach-form-card textarea:focus {
+  outline: 2px solid #ffb347;
+}
+
+/* STAR RATING */
+.star-rating {
+  display: flex;                /* changed from inline-flex */
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;                     /* reduced from 6px → 4px */
+  margin: 6px 0;                /* slightly tighter spacing */
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 26px;              /* slightly smaller for balance */
+  line-height: 1;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffb347;
+}
+
+.star-rating input:checked ~ label {
+  color: #ffb347;
+}
+
+/* BUTTON */
+.reach-form-card button {
+  background: #ffb347;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* RIGHT COLUMN */
+.right-column {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* COMMON CARD */
+.thankyou-card,
+.contact-card,
+.user-feedback-card {
+  background: #2a3145;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.thankyou-card h3,
+.contact-card h3,
+.user-feedback-card h3 {
+  color: #ffb347;
+  margin-bottom: 10px;
+}
+
+/* FEEDBACK ITEM */
+.feedback-item {
+  background: #1c2230;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}

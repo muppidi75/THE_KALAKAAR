@@ -1,0 +1,53 @@
+/* ==============================
+   USERS MANAGEMENT
+================================ */
+
+.users-container {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* TITLE */
+
+.users-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #111827;
+}
+
+/* TABLE */
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* HEADER */
+
+.users-table thead {
+  background: #1f2937;
+}
+
+.users-table th {
+  color: #ffffff;
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* ROWS */
+
+.users-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #374151;
+}
+
+/* HOVER EFFECT */
+
+.users-table tbody tr:hover {
+  background: #f3f4f6;
+}

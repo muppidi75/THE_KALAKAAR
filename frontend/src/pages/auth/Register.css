@@ -1,0 +1,300 @@
+/* Full page setup */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Background image full page */
+.register-page {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ✅ Background Image */
+  background-image: url("/assests/Register.jpg"); /* keep image inside public folder */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* ✅ Dark overlay */
+  background-color: rgba(0, 0, 0, 0.45);
+  background-blend-mode: overlay;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Glass Card */
+.register-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 40px 35px;
+
+  /* ✅ Glass effect */
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border-radius: 18px;
+
+  /* ✅ Glass shadow */
+  box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.35);
+
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Title */
+.register-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 8px;
+  color: #faf7f7;
+}
+
+.register-subtitle {
+  text-align: center;
+  font-size: 14px;
+  margin: 0 0 25px;
+  color: #000000;
+}
+
+/* Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* ✅ INPUTS */
+.input-group input {
+  width: 60%;
+  min-width: 260px;
+  max-width: 380px;
+
+  padding: 10px 12px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+
+  background: #fff !important;
+  -webkit-text-fill-color: #000 !important;
+  color: #000;
+  caret-color: #000;
+
+  display: block;
+  margin: 0 auto;
+}
+
+/* ✅ Input focus effect */
+.input-group input:focus {
+  border-color: #f3caca;
+  box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.35);
+}
+
+/* ✅ Chrome Autofill Fix (prevents pink/yellow input background) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #000000 !important;
+  caret-color: #000000 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* ✅ Button */
+.register-btn {
+  width: 55%;
+  padding: 13px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #e29e9e;
+  color: rgb(14, 13, 13);
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  display: block;
+  margin: 0 auto;
+}
+
+.register-btn:hover {
+  background: #be7e8b;
+  transform: translateY(-2px);
+}
+
+.register-btn:active {
+  transform: translateY(1px);
+}
+
+/* ✅ Extra text (already have account) */
+.register-footer {
+  margin-top: 18px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.register-footer a {
+  color: #ffd6d6;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ✅ ROLE SELECT DROPDOWN */
+.input-group select {
+  width: 50%;
+  min-width: 260px;
+  max-width: 420px;
+
+  padding: 10px 12px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+
+  background: #fff !important;
+  color: #000 !important;
+  caret-color: #000;
+
+  display: block;
+  margin: 0 auto;
+
+  appearance: none;          /* ✅ removes default arrow style */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  cursor: pointer;
+}
+
+/* ✅ select focus effect same as input */
+.input-group select:focus {
+  border-color: #f3caca;
+  box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.35);
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group select {
+  padding-right: 35px; /* space for arrow */
+}
+
+.input-group::after {
+ 
+  position: absolute;
+  right: 18%;
+  top: 70%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: #000;
+  pointer-events: none;
+}
+
+/* ✅ Role dropdown styled like input */
+.input-group select {
+  content: "▼";
+  width: 65%;
+  min-width: 260px;
+  max-width: 380px;
+
+  padding: 10px 12px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+
+  background: #fff !important;
+  color: #000 !important;
+
+  display: block;
+  margin: 0 auto;
+
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* dropdown focus */
+.input-group select:focus {
+  border-color: #f3caca;
+  box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.35);
+}
+
+/* ✅ Login link under register button */
+.login-link {
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.login-link span {
+  font-weight: 700;
+  cursor: pointer;
+  color: #ffd6d6;
+}
+
+.login-link span:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .register-card {
+    padding: 30px 25px;
+  }
+
+  .register-title {
+    font-size: 26px;
+  }
+
+  .input-group input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .register-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,78 @@
+.artworks-page {
+  padding: 30px;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* Title */
+.artworks-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Upload Box */
+.upload-box {
+  background: white;
+  padding: 25px;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Inputs */
+.file-input,
+.text-input,
+.text-area {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.text-area {
+  min-height: 90px;
+  resize: none;
+}
+
+/* Preview Image */
+.preview-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Upload Button */
+.upload-btn {
+  background: #111827;
+  color: white;
+  padding: 11px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.upload-btn:hover {
+  background: #1f2933;
+}
+
+/* Info */
+.info-text {
+  margin-top: 25px;
+  color: #555;
+}
+
+/* Grid */
+.art-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 18px;
+}

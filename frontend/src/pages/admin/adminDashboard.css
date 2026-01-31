@@ -1,0 +1,45 @@
+.admin-dashboard {
+  padding: 30px;
+}
+
+.admin-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.admin-subtitle {
+  color: #6b7280;
+  margin-bottom: 25px;
+}
+
+.stats-container {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-title {
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.stat-value {
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #111827;
+}

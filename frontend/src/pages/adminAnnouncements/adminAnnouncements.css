@@ -1,0 +1,140 @@
+/* ==============================
+   ANNOUNCEMENTS PAGE
+================================ */
+
+.announce-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* PAGE TITLE */
+
+.announce-container h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 25px;
+}
+
+/* ==============================
+   CREATE ANNOUNCEMENT CARD
+================================ */
+
+.announce-card {
+  background: #f9fafb;
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  border: 1px solid #e5e7eb;
+}
+
+.announce-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 14px;
+}
+
+/* TEXTAREA */
+
+.announce-card textarea {
+  width: 100%;
+  min-height: 130px;
+  padding: 14px;
+
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 1.5;
+
+  resize: vertical;
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.announce-card textarea::placeholder {
+  color: #9ca3af;
+}
+
+.announce-card textarea:focus {
+  border-color: #1f2937;
+  box-shadow: 0 0 0 2px rgba(31, 41, 55, 0.15);
+}
+
+/* ==============================
+   PUBLISH BUTTON
+================================ */
+
+.publish-btn {
+  margin-top: 15px;
+
+  background: #1f2937;
+  color: #ffffff;
+
+  border: none;
+  padding: 10px 22px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.publish-btn:hover {
+  background: #111827;
+}
+
+.publish-btn:active {
+  transform: scale(0.97);
+}
+
+/* ==============================
+   ANNOUNCEMENTS LIST
+================================ */
+
+.announce-list h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 18px;
+}
+
+.announce-item {
+  background: #f3f4f6;
+  padding: 16px;
+  border-radius: 10px;
+
+  margin-bottom: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: 0.2s ease;
+}
+
+.announce-item:hover {
+  background: #e5e7eb;
+}
+
+/* TEXT */
+
+.announce-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* DATE */
+
+.announce-item span {
+  font-size: 12px;
+  color: #6b7280;
+}

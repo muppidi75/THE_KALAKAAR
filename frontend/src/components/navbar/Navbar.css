@@ -1,0 +1,96 @@
+/* ==============================
+   NAVBAR CONTAINER
+================================ */
+.navbar {
+  height: 70px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;   /* reduced padding for tighter alignment */
+
+  background: #d99368;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* ==============================
+   LEFT: LOGO
+================================ */
+.nav-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;   /* ensures logo sticks left */
+  align-items: center;
+}
+
+.logo {
+  margin: 0;
+  font-size: 28px;   /* slightly reduced size for balance */
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  color: #000000;
+  font-family: "Great Vibes", cursive;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ==============================
+   CENTER: MENU LINKS
+================================ */
+.nav-center {
+  flex: 2;
+  display: flex;
+  justify-content: center;   /* keeps links centered */
+  align-items: center;
+  gap: 30px;                 /* slightly reduced gap */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-center li {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #111827;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+/* ==============================
+   RIGHT: LOGOUT SECTION
+================================ */
+.nav-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;   /* pushes logout to far right */
+  align-items: center;
+  margin-right: 0;             /* remove extra margin */
+}
+
+/* Logout button */
+.logout-btn {
+  border: none;
+  background: #000000;
+  color: white;
+  padding: 5px 10px;           /* reduced padding */
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 10px;             /* slightly smaller font */
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #000000;
+}

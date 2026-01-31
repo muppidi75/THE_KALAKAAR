@@ -1,0 +1,64 @@
+.collections-page {
+  padding: 40px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.collections-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #111827;
+  letter-spacing: 1px;
+}
+
+.status-text {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 40px;
+}
+
+/* Grid */
+.collections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.art-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.art-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Image */
+.art-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Info */
+.art-info {
+  padding: 14px;
+}
+
+.art-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111827;
+}
+
+.art-info p {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.4;
+}
