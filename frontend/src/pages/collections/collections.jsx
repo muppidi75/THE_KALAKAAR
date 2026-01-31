@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "../../services/api";
-import "./Collections.css";
+import "./collections.css";
 
 export default function Collections() {
   const [artworks, setArtworks] = useState([]);
