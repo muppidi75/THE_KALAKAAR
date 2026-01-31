@@ -1,28 +1,20 @@
 import "./adminUserList.css";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import api from "../../services/api";
 
- 
-
 export default function UsersList() {
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-  // axios.get("http://localhost:8080/api/admin/users",
-    api.get("/admin/users", {
 
-    headers: {
-      Authorization: `Bearer ${sessionStorage.getItem("token")}`
-    }
-  })
-  .then((res) => {
-    setUsers(res.data);
-  })
-  .catch((err) => {
-    console.error("Error fetching users:", err);
-  });
-}, []);
-}
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    api.get("/admin/users")
+      .then((res) => {
+        setUsers(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching users:", err);
+      });
+  }, []);
 
   return (
     <div className="users-container">
@@ -49,4 +41,4 @@ export default function UsersList() {
       </table>
     </div>
   );
-
+}
