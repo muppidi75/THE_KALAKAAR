@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "../../services/api";
+import api from "../../services/api";
 import "./adminDashboard.css";
 
 export default function AdminDashboard() {

@@ -8,7 +8,8 @@ export default function AdminFeedback() {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    api.get("http://localhost:8080/api/admin/feedback", {
+    // api.get("http://localhost:8080/api/admin/feedback", {
+    api.get("/admin/feedback", {
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem("token")}`
       }
