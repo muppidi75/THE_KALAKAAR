@@ -15,10 +15,10 @@ export default function Canvas() {
 
   useEffect(() => {
     // fetch("http://localhost:8080/api/user/canvas/recentFeedback")
+    useEffect(() => {
     api.get("/user/canvas/recentFeedback")
-      .then(res => res.json())
-      .then(data => setFeedbacks(data))
-      .catch(err => console.log(err));
+      .then(res => setFeedbacks(res.data))
+      .catch(err => console.log("Feedback error:", err));
   }, []);
 
   /* ---------------- Announcements ---------------- */
