@@ -1,61 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./canvas.css";
-import { useState, useEffect } from "react";
-import axios from "axios";   // ✅ ADD THIS
 import api from "../../services/api";
 
 export default function Canvas() {
+
   const navigate = useNavigate();
   const name = sessionStorage.getItem("name") || "ARTIST";
 
-  /* ---------------- Recent Feedback ---------------- */
-
+  /* -------- Recent Feedback -------- */
   const [recentFeedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    // fetch("http://localhost:8080/api/user/canvas/recentFeedback")
-    useEffect(() => {
     api.get("/user/canvas/recentFeedback")
       .then(res => setFeedbacks(res.data))
       .catch(err => console.log("Feedback error:", err));
   }, []);
 
-  /* ---------------- Announcements ---------------- */
-
+  /* -------- Announcement -------- */
   const [announcement, setAnnouncement] = useState(null);
 
   useEffect(() => {
-    // axios.get("http://localhost:8080/api/user/latest-announcement")
     api.get("/user/latest-announcement")
-
       .then(res => setAnnouncement(res.data))
-      .catch(err => console.log(err));
+      .catch(err => console.log("Announcement error:", err));
   }, []);
 
   return (
     <div className="canvas-page">
 
-      {/* ===== Welcome Section ===== */}
+      {/* Welcome */}
       <div className="welcome-box">
         <h2>WELCOME {name}</h2>
         <h1>Your creative space starts on the <span>Canvas.</span></h1>
-        <p>
-          Explore collections, read inspiring stories, and connect with THE KALAKAAR community.
-        </p>
+        <p>Explore collections, read inspiring stories, and connect with THE KALAKAAR.</p>
       </div>
 
       <div className="main-layout">
 
-        {/* ===== Left Canvas Area ===== */}
+        {/* Left */}
         <div className="canvas-area">
           <h3>CANVAS</h3>
 
           <div className="canvas-image">
-            <img src="/assests/Register.jpg" alt="canvas" />
+            <img src="/assets/Register.jpg" alt="canvas" />
           </div>
 
-          {/* Bottom Navigation Cards */}
           <div className="bottom-cards">
 
             <div className="nav-card" onClick={() => navigate("/user/collections")}>
@@ -65,43 +55,46 @@ export default function Canvas() {
 
             <div className="nav-card" onClick={() => navigate("/user/story")}>
               <h4>My Story</h4>
-              <p>Read about my creative journey</p>
+              <p>Read about my journey</p>
             </div>
 
             <div className="nav-card" onClick={() => navigate("/user/contact")}>
               <h4>Reach Us</h4>
-              <p>Support, feedback & collaboration</p>
+              <p>Support & feedback</p>
             </div>
 
           </div>
         </div>
 
-        {/* ===== Right Panel ===== */}
+        {/* Right */}
         <div className="side-panel">
 
-          {/* Recent Feedback */}
+          {/* Feedback */}
           <div className="panel-card">
             <h3>Recent Feedback</h3>
 
-            {recentFeedbacks.map((f, index) => (
-              <div key={index} className="feedback-item">
-                <strong>{f.name}</strong>
-                <p>Comment: <strong>{f.message}</strong></p>
-              </div>
-            ))}
+            {recentFeedbacks.length === 0 ? (
+              <p>No feedback yet.</p>
+            ) : (
+              recentFeedbacks.map((f, i) => (
+                <div key={i} className="feedback-item">
+                  <strong>{f.name}</strong>
+                  <p>{f.message}</p>
+                </div>
+              ))
+            )}
           </div>
 
-          {/* Announcements */}
-         <div className="panel-card">
-  <h3>Latest Announcement</h3>
+          {/* Announcement */}
+          <div className="panel-card">
+            <h3>Latest Announcement</h3>
 
-  {announcement ? (
-    <p>📢 {announcement.message}</p>
-      ) : (
-    <p>No announcements yet.</p>
-      )}
-
-       </div>
+            {announcement ? (
+              <p>📢 {announcement.message}</p>
+            ) : (
+              <p>No announcements yet.</p>
+            )}
+          </div>
 
         </div>
       </div>
