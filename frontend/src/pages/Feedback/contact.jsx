@@ -39,6 +39,7 @@ const [feedbacks, setFeedbacks] = useState([]);
 
       if (response.status === 200 || response.status === 201) {
         setSubmitted(true);
+        alert("Message sent successfully");
       } else {
         alert("Failed to send message");
       }
