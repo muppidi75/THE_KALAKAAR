@@ -43,7 +43,7 @@ export default function Canvas() {
           <h3>CANVAS</h3>
 
           <div className="canvas-image">
-            <img src="/assets/Register.jpg" alt="canvas" />
+            <img src="/assests/Register.jpg" alt="canvas" />
           </div>
 
           <div className="bottom-cards">
